@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<ruleset name="SharingTech PHPCS">
+  <rule ref="PSR2">
+    <exclude name="Generic.Files.LineLength"/>
+    <exclude name="PSR1.Classes.ClassDeclaration"/>
+  </rule>
+  <rule ref="Squiz.Commenting.FunctionComment">
+    <exclude name="Squiz.Commenting.FunctionComment.EmptyThrows"/><!-- @throws are forbidden -->
+    <exclude name="Squiz.Commenting.FunctionComment.IncorrectTypeHint"/><!-- collection syntax such as string[] is not supported -->
+    <exclude name="Squiz.Commenting.FunctionComment.IncorrectParamVarName"/><!-- enforces incorrect types -->
+    <exclude name="Squiz.Commenting.FunctionComment.InvalidReturn"/><!-- enforces incorrect types -->
+    <exclude name="Squiz.Commenting.FunctionComment.InvalidReturnNotVoid"/><!-- is not able to detect return types such as string|null as correct -->
+    <exclude name="Squiz.Commenting.FunctionComment.InvalidThrows"/><!-- @throws are forbidden -->
+    <exclude name="Squiz.Commenting.FunctionComment.MissingParamComment"/><!-- comments are not required for @param -->
+    <exclude name="Squiz.Commenting.FunctionComment.MissingParamName"/><!-- type are not required for @param -->
+    <exclude name="Squiz.Commenting.FunctionComment.MissingParamTag"/><!-- phpdoc isn't required for tests with @dataProvider -->
+    <exclude name="Squiz.Commenting.FunctionComment.MissingReturn"/><!-- void type is not used -->
+    <exclude name="Squiz.Commenting.FunctionComment.ParamCommentFullStop"/><!-- comments don't have to be sentences -->
+    <exclude name="Squiz.Commenting.FunctionComment.ParamCommentNotCapital"/><!-- comments don't have to be sentences -->
+    <exclude name="Squiz.Commenting.FunctionComment.ScalarTypeHintMissing"/><!-- works only for code requiring PHP 7 code or better -->
+    <exclude name="Squiz.Commenting.FunctionComment.SpacingAfterParamName"/><!-- we don't want spacing with alignment -->
+    <exclude name="Squiz.Commenting.FunctionComment.SpacingAfterParamType"/><!-- we don't want spacing with alignment -->
+    <exclude name="Squiz.Commenting.FunctionComment.ThrowsNoFullStop"/><!-- @throws are forbidden -->
+    <exclude name="Squiz.Commenting.FunctionComment.ThrowsNotCapital"/><!-- @throws are forbidden -->
+    <exclude name="Squiz.Commenting.FunctionComment.TypeHintMissing"/><!-- doesn't work with self as typehint -->
+    <exclude name="Squiz.Commenting.FunctionComment.WrongStyle"/><!-- doesn't support /*** xx */ separators -->
+  </rule>
+  <rule ref="Squiz.Commenting.FunctionCommentThrowTag" />
+  <rule ref="Squiz.Commenting.VariableComment" />
+  <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
+
+  <exclude-pattern>*.blade.php</exclude-pattern>
+  <exclude-pattern>*.yml</exclude-pattern>
+  <exclude-pattern>*.js</exclude-pattern>
+  <exclude-pattern>.git/</exclude-pattern>
+  <exclude-pattern>*.twig.php</exclude-pattern>
+  <exclude-pattern>public/index.php</exclude-pattern>
+  <exclude-pattern>_ide_helper.php</exclude-pattern>
+  <exclude-pattern>.phpstorm.meta.php</exclude-pattern>
+  <exclude-pattern>bootstrap/</exclude-pattern>
+  <exclude-pattern>node_modules/</exclude-pattern>
+  <exclude-pattern>public/build/</exclude-pattern>
+  <exclude-pattern>public/css/</exclude-pattern>
+  <exclude-pattern>public/js/</exclude-pattern>
+  <exclude-pattern>public/vendor/</exclude-pattern>
+  <exclude-pattern>resources/assets/</exclude-pattern>
+  <exclude-pattern>resources/views/</exclude-pattern>
+  <exclude-pattern>storage/</exclude-pattern>
+  <exclude-pattern>vendor/</exclude-pattern>
+  <exclude-pattern>tests/</exclude-pattern>
+</ruleset>
